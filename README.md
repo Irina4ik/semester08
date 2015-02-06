@@ -1,4 +1,4 @@
-License note.
+License note
 
  All data here are gathered from public sources or was written by me. 
 
