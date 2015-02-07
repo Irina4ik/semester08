@@ -1,4 +1,4 @@
-1. Edit report
+1. Edit report (.tex, .bib, reference, graphics)
 2. Web service
 3. Compared with analogues (Sakai and other)
-4. Presentation
+4. Presentations
