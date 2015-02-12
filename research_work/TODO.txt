@@ -1,4 +1,2 @@
-1. Edit report (.tex, .bib, reference, graphics)
-2. Web service
-3. Compared with analogues (Sakai and other)
-4. Presentations
+1. Обзор учебных сред (Sakai, Moodle...) - 10-20 стр.
+2. Проектирование (реализация веб-сервиса)
