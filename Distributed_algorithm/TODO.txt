@@ -2,7 +2,7 @@
 Шошмина Ирина Владимировна
 ishoshmina@dcn.icc.spbstu.ru
 9-105
-BEN-ARI Principies concurrent distributed programming
+BEN-ARI Principles of Concurrent and Distributed Programming
 1. экзамен - задача из BEN-ARI
 2. зачёт/к.р.: тема-задача - презентация-доклад, посв. решению задачи
   0) Решение этой задачи,
