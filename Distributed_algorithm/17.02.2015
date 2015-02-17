@@ -20,7 +20,7 @@
 (N=2)
 (предпротокол)
 
-@Alg 3.2
+***Alg 3.1
 integer turn=1
 p
 loop forever
@@ -34,8 +34,99 @@ q1: non-crit sec
 q2: await (turn=2)
 q3: crit sec
 q4: turn<-1;
+--пример
+integer a <- 1, b <-2;
+P:
+...million of strings
+(p1 ->, p2, p3)
+...a <- (a+b)*100+5
+   a=10, b=20
+<p2, q2, 10, 20> -> <p3, q2, 3005, 20>, <p2, q3, 10, 3005>
+Q:
+(q1 ->, q2, q3)
+...million of strings
+...b <- (a+b)*100+5
 
-@Алгоритм Декера
+N процессов, nj операторов, M переменных, mi значений:
+**Количество состояний:
+П(1..N) (nj) * П(1..M) (mi), <- экспонента, не хотим к ней приходить
+
+4*4*2=32
+
+**Сокр. алг.
+P::
+loop forever    int turn <- 1
+p1': await (turn = 1)
+p2': turn <- 2
+Q::
+loop forever
+q1': await (turn = 2)
+q2': turn <- 1
+--
+Диаграмма состояний (по ней анализируем)
+-> S0 (p1', q1', turn=1) -> S1 (p2', q1', turn=1) -> S2 (p1', q1', turn=2) -> S3 (p1', q2', turn=2) -> (S3->S0)
+(из 2-ух -> 4-ре состояния)
+Как проверить корректность?
+v 1. Оба не попадают в крит. секц. одновр. (взаимноискл. доступ) <p2',q2', ...>
+v 2. Требование, говорим о том, что нет дедлока (Deadlock)
+- 3. Голодание (Starvation) (любой процесс, который входит в крит. секцию в неё входит)
+(Процесс p2 никогда не войдёт в критическую секцию)
+
+--Задача 1:
+boolean want p <- false,
+        want q <- false,
+P:: // процесс
+loop farever
+p1: await (~want q)
+p2: want p <- 1
+Критическая секция
+p3: want p <- 0
+<p, q, want p, want q> //нарушает одно из свойств - 1
+-> S0 (p1, q1, 0, 0) -> ...
+
+--Задача 2:
+boolean want p <- false,
+        want q <- false,
+p::
+loop forever
+p1: want p <- 1
+p2: await (~want q)
+Крит. секц.
+p3: want p <- 0
+<p, q, want p, want q>
+p1, q1, 0, 0
+p2, q1, 1, 0
+p2, q2, 1, 1
+//нарушает одно из свойств - 2
+Deadlock
+
+--Задача 3:
+boolean want p <- false,
+        want q <- false,
+p::
+loop forever
+p1: want p <- 1
+p2: while (want q)
+p3:     want p <- 0 //меняем
+p4:     want p <- 1
+Крит. секц.
+p5: want p <- 0
+Найти требование которое решается, вычислить
+//нарушает одно из свойств - 3 (голодание)
+<p, q, want p, want q>
+ p1, q1, 0, 0
+ p2, q1, 1, 0
+ p2, q2, 1, 1
+-->
+|p3, q2, 1, 1
+|p4, q2, 0, 1
+|p4, q5, 0, 1
+|p4, q1, 0, 0
+|p4, q2, 0, 1
+|p2, q2, 1, 1
+-|
+
+***Алгоритм Декера
 boolean want p <- 0,
         want p <- 0;
 integer turn <- 1;
@@ -49,3 +140,66 @@ p6: want p <- 1
 (Крит. секция)
 p7: turn <- 2
 p8: want p <- 0
+//фиксир. послед-ть
+(512 состояний)
+---
+Задача 1:
+Атомарная операция
+test-and set (common, local)
+{
+ local <- common;
+ common <- 1
+} // не могут чередоваться ни с какими др. операторами, атомарные
+integer common <- 0
+p::
+   integer local <- 1
+//Проверка и изменение переменных, не атомарны
+//Придумать алгоритм, по local д. попасть в кр. секц., проверка д.б. циклом, чтобы не блокир.
+--
+integer local1
+loop forever
+p1: while(1)
+p2:     t-a-s(common,local1)
+p3:      if(local1=0)
+p4:             break
+....
+p5: common = 0
+/*loop forever
+        repeat
+p1:         t-a-s(s,l1)
+p2:        until l1=0
+        ()
+p3:        common n <- 0*/
+Все достижимые состояния рисовать (81->36 состояний)
+<p, q, common, l1, l2>
+S0(p1, q1, 0, #, #)->S1(p1, q2, 1, #, 0)
+S0->S2(p2, q1, 1, 0, #)
+S1->S3(p2, q2, 1, 1, 0)->S7(p2, q3, 1, 1, 0)->S9(p1, q3, 1, 1, 0)
+S1->S5(p1, q3, 1, #, 0); S5->S7
+S2->S6(p3, q1, 1, 0, #)->S8(p3, q2, 1, 0, 1)
+S2->S4(p2, q2, 1, 0, 1), S4->S8
+S4->S10(p2, q1, 1, 0, 1)->S11(p3, q1, 1, 0, 1)->S12(p1, q1, 0, 0, 1), S10->S4
+---
+Задача2:
+--
+exchange (a, b) //выйти в крит.секц.
+{        
+        integer temp
+        temp <- a
+        a <- b
+        b <- temp
+}
+--
+integer common <- 1
+p::
+integer local1 <- 0
+loop forever
+p1: non-crit-sec
+p2: while(~local1)
+p3:     if(common)
+p4:            exchange (common, local1)
+/*repeat
+        excange(c, l1)
+  until l1=1;*/
+    crit sec
+      exchance(local1, common);
