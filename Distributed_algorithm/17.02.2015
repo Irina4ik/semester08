@@ -126,7 +126,7 @@ p5: want p <- 0
 |p2, q2, 1, 1
 -|
 
-***Алгоритм Декера
+***Алгоритм Деккера
 boolean want p <- 0,
         want p <- 0;
 integer turn <- 1;
