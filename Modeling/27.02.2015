@@ -1,0 +1,45 @@
+10 заданий, каждый готовит презентацию на 5-10 минут
+  Диаграммы UML
+    !!!Activity Diagram - “Activities”
+    Class Diagram - “Classes”
+    Communication Diagram - “Interactions”
+    Component Diagram - “Components”
+    Composite Structure Diagram - “Composite Structures”
+    Deployment diagram - “Deployments”
+    Interaction Overview Diagram - “Interactions”
+    Object Diagram - “Classes”
+    Package Diagram - “Classes”
+    State Machine Diagram - “State Machines”
+    Sequence Diagram - “Interactions”
+    Timing Diagram - “Interactions”
+    Use Case Diagram - “Use Cases”
+
+Классификатор - что это? узнать
+
+Литература:
+1) ООМ_UML_1 слайд 12
+2) У. Дал, Б. Мюрхауг, К. Нюгорд, СИМУЛА-67. Универсальный язык Моделирования. Мир, 1969
+
+Smalltalk
+5 мин сравнение с аналогами
+
+НЕДИС
+UML - язык спецификации всех систем
+OMT (Object Modeling Technique)
+
+!Модель предметной области (domain model) - на предприятии
+
+State Machines (меняет методы, характер вычислений, демонстрирует изменчивость системы)
+
+Структурные свойства
+
+Visual UML - Developer Edition
+
+Жизненный цикл проектирования:
+  Определение требований
+  Прецеденты (use cases)
+  Модель предметной области (domain model)
+  Диаграммы взаимодействия
+  Диаграммы классов
+  Уточнение модели и создание архитектуры
+  Документирование
