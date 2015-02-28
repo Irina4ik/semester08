@@ -4,7 +4,7 @@ Study
 Development
      Visual Basic
      Паскаль
-     C++
+     !!!C++
      Assembler
      C
      ФОРТРАН
@@ -15,12 +15,12 @@ Development
      Lisp/Scheme: Racket
      UML
      SQL
-     C#
+     !!!C#
      TEX
      Maple
      Mathcad
      PL/SQL
-     Java
+     !!!Java
      QML
      Matlab
      Exsys CORVID
