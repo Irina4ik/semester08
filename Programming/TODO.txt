@@ -1,0 +1,86 @@
+Study
+    Java
+
+Development
+     Visual Basic
+     Паскаль
+     C++
+     Assembler
+     C
+     ФОРТРАН
+     Милан
+     HTML
+     JavaScript
+     Haskell
+     Lisp/Scheme: Racket
+     UML
+     SQL
+     C#
+     TEX
+     Maple
+     Mathcad
+     PL/SQL
+     Java
+     QML
+     Matlab
+     Exsys CORVID
+     C++, DirectX
+     Rand Model Designer
+     Promela - SPIN
+
+Familiarity
+     TypeScript
+     CSS
+     jQuery
+////Полнофункциональные языки
+Ассемблеры
+
+//Структурные
+Фортран
+Pascal
+sh
+
+//Процедурные
+Си
+Maple
+MATLAB
+Паскаль
+
+//Логические
+Prolog
+
+//Объектно-ориентированные
+Action Script
+C++
+C#
+Java
+JavaScript
+Objective-C
+PHP
+Simula
+Visual Basic
+
+//Функциональные
+Cat
+Erlang
+Haskell
+OCaml
+Mathematica
+Scheme
+Лисп
+
+////Стековые
+PostScript
+
+////Параллельные
+C#
+Java
+
+////Неполнофункциональные языки
+1С
+PostScript
+Matlab
+
+//Языки СУБД
+SQL
+PL/SQL
