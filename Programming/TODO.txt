@@ -32,6 +32,7 @@ Familiarity
      TypeScript
      CSS
      jQuery
+     Perl
 ////Полнофункциональные языки
 Ассемблеры
 
