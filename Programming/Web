@@ -318,3 +318,39 @@ PHP, ООП, MVC, СУБД, git
 HTML, XML, CSS, JavaScript (Ajax, jQuery)
 Опыт работы c CMS или PHP-фреймворками
 backend сайты
+--
+PHP (работа в фреймворках Kohana, Symphony)
+JavaScript !(jQuery)
+HTML и CSS
+--
+Компоненты Symfony 2, Vagrant
+--
+MySQL (left join, create index)
+Nginx, php-fpm, memcache, git, vagrant, gulp
+--
+back-end Java разработка веб сервисов (REST API, JSON-RPC) с использованием Spring Framework
+core Java, Servlets, SQL (PostgresSQL, Oracle)
+JPA (Hibernate)
+Spring Framework (core, spring-webflow, spring-security, spring-data)
+HTTP
++Работа с *nix системами
++Работа с OAuth 2.0
++Разработка highload-приложений
++Работа с API социальных сетей (FB, VK)
+--
+Java J2EE
+Разработка Web приложений с использованием сервис-ориентированной архитектуры на языке Java
++.NET и C#
+Цикл разработки ПО: разработка, отладка, поддержка web приложений с использованием Java/Spring Framework
+Следование общепринятым методологиям для создания ПО - ООП, Unit tests, MVC, Inversion of control
+Интеграция аппаратных средств аутентификации
+Использование Java, Spring Framework, JSP, HTML5, Javascript/jQuery, junit и других Java библиотек, 
+для создания web приложений, web сервисов и Java-апплетов
+Профессиональное знание среды IntelliJ IDEA, системы сборки Apache Maven и системы котроля версий git
+Знание подходов к разработке ПО: ООП, MVC, Inversion of control
+Знание и опыт в внедрении, конфигурировании и котроле доступа для web приложений, web сервисов, выполняющихся на серверах
+  JBOSS, WebLogic и WebSphere
+Знание web сервисов, использующих протоколы HTTP, HTTPS, SOAP
+--
+Django/Python
++Опыт работы с MongoDB, Redis, Celery
